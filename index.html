@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GuGu Translate</title>
+    <meta charset="UTF-8">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon"/>
+    <style>
+        div.content {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        div.content > textarea {
+            width: 30em;
+            height: 12em;
+            margin: 1em;
+        }
+
+        div.content > .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <textarea id="decoded-area" placeholder="Decoded Text Here"></textarea>
+    <div class="buttons">
+        <button id='encode-btn'>Encode &gt;&gt;</button>
+        <button id='decode-btn'>&lt;&lt; Decode</button>
+    </div>
+    <textarea id="encoded-area" placeholder="Encoded Text Here"></textarea>
+</div>
+<script src="gugu.js"></script>
+<script>
+    const decodedArea = document.getElementById('decoded-area');
+    const encodedArea = document.getElementById('encoded-area');
+    const decodeBtn = document.getElementById('decode-btn');
+    const encodeBtn = document.getElementById('encode-btn');
+    encodeBtn.addEventListener('click', (e) => {
+        encodedArea.value = encode(decodedArea.value);
+    });
+    decodeBtn.addEventListener('click', (e) => {
+        decodedArea.value = decode(encodedArea.value);
+    });
+</script>
+</body>
+</html>
