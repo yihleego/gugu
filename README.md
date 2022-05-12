@@ -1,5 +1,7 @@
 # GuGu Translate
 
+Demo: https://yihleego.github.io/gugu/
+
 ## Usage
 
 ### Encode
